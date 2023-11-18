@@ -1,1 +1,19 @@
+scheduler:
+  url: https://www.eurogamer.net/feed
 
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Web Scraping Api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scrapingDB
+    username: admin
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

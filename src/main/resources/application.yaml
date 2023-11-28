@@ -8,11 +8,11 @@ server:
 
 spring:
   application:
-    name: Web Scraping Api
+    name: web-scraping-api
   datasource:
-    url: jdbc:postgresql://localhost:5432/scrapingDB
-    username: admin
-    password: password
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: create-drop

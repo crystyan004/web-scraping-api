@@ -8,6 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import ro.budeanu.cristian.webscrapingapi.FeedItemRepository;
 import ro.budeanu.cristian.webscrapingapi.model.FeedId;
 import ro.budeanu.cristian.webscrapingapi.model.FeedItem;
+import ro.budeanu.cristian.webscrapingapi.scarpers.Scarper;
 
 import java.util.List;
 import java.util.Set;
@@ -18,11 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class FeedItemServiceTest {
     @Mock
     private FeedItemRepository feedItemRepository;
+    @Mock
+    private Scarper scarper;
     private FeedItemService feedItemService;
 
     @BeforeEach
     void setup() {
-        feedItemService = new FeedItemService(feedItemRepository);
+        feedItemService = new FeedItemService(feedItemRepository, scarper);
     }
 
     @Test
